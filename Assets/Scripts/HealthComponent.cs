@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HealthComponent : MonoBehaviour
@@ -6,12 +7,15 @@ public class HealthComponent : MonoBehaviour
     public float maxHealth = 3;
     private float invincibilityTimer;
     public float invincibilityCooldown = 1;
+    public float damageKnockback = 10;
+    private Rigidbody2D rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentHealth = maxHealth;
         invincibilityTimer = invincibilityCooldown;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
@@ -37,24 +41,15 @@ public class HealthComponent : MonoBehaviour
             // fast tag check
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                // Example: read collision impact
-                Vector2 contactPoint = collision.GetContact(0).point;
-                Vector2 impactVelocity = collision.relativeVelocity;
-
                 // Do something: damage player, bounce, play sound, etc.
                 Hurt(collision.gameObject.GetComponent<Enemy>().strength);
-                BounceOff(contactPoint, impactVelocity);
                 invincibilityTimer = 0;
+
+                // Knockback
+                Vector2 incoming = collision.relativeVelocity;
+                incoming.Normalize();
+                rb.linearVelocity = incoming * damageKnockback;
             }
         }
-    }
-
-    void BounceOff(Vector2 contactPoint, Vector2 impactVelocity)
-    {
-        // simple bounce example: reflect current velocity
-        var rb = GetComponent<Rigidbody2D>();
-        Vector2 normal = (Vector2)transform.position - contactPoint;
-        normal.Normalize();
-        rb.linearVelocity = Vector2.Reflect(rb.linearVelocity, normal) * 50f;
     }
 }

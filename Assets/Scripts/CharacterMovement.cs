@@ -5,12 +5,16 @@ public class CharacterMovement : MonoBehaviour
     Rigidbody2D rb;
     private float dashTimer = 0;
     public float dashCooldown = 1;
+    public float moveForce = 10;
+    public float jumpForce = 100;
+    public float dashForce = 100;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         dashTimer = 0f;
+        rb.freezeRotation = true;
     }
 
     private void FixedUpdate()
@@ -25,11 +29,11 @@ public class CharacterMovement : MonoBehaviour
     {
         if (dir < 0f)
         {
-            rb.AddForce(Vector2.left * 10);
+            rb.AddForce(Vector2.left * moveForce);
         }
         else if (dir > 0f)
         {
-            rb.AddForce(Vector2.right * 10);
+            rb.AddForce(Vector2.right * moveForce);
         }
     }
 
@@ -40,13 +44,13 @@ public class CharacterMovement : MonoBehaviour
             if (dir < 0f)
             {
                 rb.linearVelocityX = 0f;
-                rb.AddForce(Vector2.left * 100);
+                rb.AddForce(Vector2.left * dashForce);
                 dashTimer = 0f;
             }
             else if (dir > 0f)
             {
                 rb.linearVelocityX = 0f;
-                rb.AddForce(Vector2.right * 100);
+                rb.AddForce(Vector2.right * dashForce);
                 dashTimer = 0f;
             }
         }
@@ -56,7 +60,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (IsGrounded())
         {
-            rb.AddForce(Vector2.up * 100);
+            rb.AddForce(Vector2.up * jumpForce);
         }
     }
 
