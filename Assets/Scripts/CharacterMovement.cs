@@ -3,7 +3,8 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     Rigidbody2D rb;
-    public float dashTimer;
+    private float dashTimer = 0;
+    public float dashCooldown = 1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,35 +15,35 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (dashTimer < 1f)
+        if (dashTimer < dashCooldown)
         {
             dashTimer = dashTimer + Time.deltaTime;
         }
     }
 
-    public void MoveHorizontal(string dir)
+    public void MoveHorizontal(float dir)
     {
-        if (dir == "left")
+        if (dir < 0f)
         {
             rb.AddForce(Vector2.left * 10);
         }
-        else if (dir == "right")
+        else if (dir > 0f)
         {
             rb.AddForce(Vector2.right * 10);
         }
     }
 
-    public void Dash(string dir)
+    public void Dash(float dir)
     {
-        if (dashTimer >= 1f)
+        if (dashTimer >= dashCooldown)
         {
-            if (dir == "left")
+            if (dir < 0f)
             {
                 rb.linearVelocityX = 0f;
                 rb.AddForce(Vector2.left * 100);
                 dashTimer = 0f;
             }
-            else if (dir == "right")
+            else if (dir > 0f)
             {
                 rb.linearVelocityX = 0f;
                 rb.AddForce(Vector2.right * 100);

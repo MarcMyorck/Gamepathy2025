@@ -21,18 +21,12 @@ public class InputHandler : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Movement
         Vector2 moveValue = moveAction.ReadValue<Vector2>();
-        if (moveValue.x != 0)
+
+        // Movement
+        if (moveAction.IsPressed())
         {
-            if (moveValue.x < 0)
-            {
-                cm.MoveHorizontal("left");
-            }
-            else if (moveValue.x > 0)
-            {
-                cm.MoveHorizontal("right");
-            }
+            cm.MoveHorizontal(moveValue.x);
         }
 
         // Jumping
@@ -44,17 +38,7 @@ public class InputHandler : MonoBehaviour
         // Dashing
         if (dashAction.IsPressed())
         {
-            if (moveValue.x != 0)
-            {
-                if (moveValue.x < 0)
-                {
-                    cm.Dash("left");
-                }
-                else if (moveValue.x > 0)
-                {
-                    cm.Dash("right");
-                }
-            }
+            cm.Dash(moveValue.x);
         }
     }
 }
