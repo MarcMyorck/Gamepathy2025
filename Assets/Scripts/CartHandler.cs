@@ -23,7 +23,7 @@ public class CartHandler : MonoBehaviour
         GameObject cart = Instantiate(cartPrefab, transform.position + (Vector3)offset, Quaternion.identity,
                                       cartSpawnParent ? cartSpawnParent : null);
         // Configure the follower
-        CartFollower2D follower = cart.GetComponent<CartFollower2D>();
+        CartFollower follower = cart.GetComponent<CartFollower>();
         if (follower != null)
         {
             follower.SetTarget(transform, offset);
@@ -40,7 +40,7 @@ public class CartHandler : MonoBehaviour
         carts.RemoveAt(carts.Count - 1);
 
         // detach follower so it becomes independent
-        var f = last.GetComponent<CartFollower2D>();
+        var f = last.GetComponent<CartFollower>();
         if (f != null) f.ClearTarget();
     }
 }
