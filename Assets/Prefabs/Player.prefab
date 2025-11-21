@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 2515014557146212528}
   - component: {fileID: 823363344364850698}
   - component: {fileID: 2391708171756190336}
+  - component: {fileID: 1185596917520593134}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -235,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ce3c987f349f74395cfec3c9fa343f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputHandler
+  isPaused: 0
 --- !u!114 &2515014557146212528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,3 +282,19 @@ MonoBehaviour:
   cartSpawnParent: {fileID: 3262834167235800177}
   spacing: 1.2
   forwardOffset: 1.2
+--- !u!114 &1185596917520593134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6507800455938656909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62a50b3f4f6166341bad10bb1b68fbe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseManager
+  pauseMenu: {fileID: 0}
+  continueBtn: {fileID: 0}
+  settingsBtn: {fileID: 0}
+  mainMenuBtn: {fileID: 0}

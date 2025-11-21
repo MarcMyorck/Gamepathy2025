@@ -5,70 +5,90 @@ public class InputHandler : MonoBehaviour
 {
     CharacterMovement cm;
     DialogueHandler dh;
+    PauseManager pm;
 
     InputAction moveAction;
     InputAction jumpAction;
     InputAction dashAction;
+
     InputAction dialogueConfirmAction;
     InputAction dialogueDenyAction;
 
+    InputAction pauseGameAction;
+
     string inputMode;
+    public bool isPaused;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         cm = GetComponent<CharacterMovement>();
+        pm = GetComponent<PauseManager>();
 
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
         dashAction = InputSystem.actions.FindAction("Sprint");
         dialogueConfirmAction = InputSystem.actions.FindAction("ConfirmDialogue");
         dialogueDenyAction = InputSystem.actions.FindAction("DenyDialogue");
+        pauseGameAction = InputSystem.actions.FindAction("PauseGame");
 
         inputMode = "gameplay";
+        isPaused = false;
     }
 
     private void Update()
     {
-        if (inputMode == "gameplay")
+        if (!isPaused)
         {
-            // Jumping
-            if (jumpAction.triggered)
+            if (inputMode == "gameplay")
             {
-                cm.TryJump();
+                // Jumping
+                if (jumpAction.triggered)
+                {
+                    cm.TryJump();
+                }
             }
-        }
 
-        if (inputMode == "dialogue")
-        {
-            // Confirm/Deny Dialogue
-            if (dialogueConfirmAction.triggered)
+            if (inputMode == "dialogue")
             {
-                dh.Confirm();
+                // Confirm/Deny Dialogue
+                if (dialogueConfirmAction.triggered)
+                {
+                    dh.Confirm();
+                }
+                else if (dialogueDenyAction.triggered)
+                {
+                    dh.Deny();
+                }
             }
-            else if (dialogueDenyAction.triggered)
+
+            if (pauseGameAction.triggered)
             {
-                dh.Deny();
+                isPaused = true;
+                pm.Pause(this);
             }
         }
     }
 
     private void FixedUpdate()
     {
-        if (inputMode == "gameplay")
+        if (!isPaused)
         {
-            Vector2 moveValue = moveAction.ReadValue<Vector2>();
-
-            // Movement
-            if (moveAction.IsPressed())
+            if (inputMode == "gameplay")
             {
-                cm.MoveHorizontal(moveValue.x);
-            }
+                Vector2 moveValue = moveAction.ReadValue<Vector2>();
 
-            // Dashing
-            if (dashAction.IsPressed())
-            {
-                cm.Dash(moveValue.x);
+                // Movement
+                if (moveAction.IsPressed())
+                {
+                    cm.MoveHorizontal(moveValue.x);
+                }
+
+                // Dashing
+                if (dashAction.IsPressed())
+                {
+                    cm.Dash(moveValue.x);
+                }
             }
         }
     }
