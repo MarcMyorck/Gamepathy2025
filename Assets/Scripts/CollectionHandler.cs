@@ -1,15 +1,20 @@
+using TMPro;
 using UnityEngine;
 
 public class CollectionHandler : MonoBehaviour
 {
-    private int cartAmount;
+    private int currentCartAmount;
+    private int maxCartAmount;
     private CartHandler ch;
+    public TextMeshProUGUI cartsText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        cartAmount = 0;
+        maxCartAmount = GameObject.FindGameObjectsWithTag("CartCollectible").Length;
+        currentCartAmount = 0;
         ch = GetComponent<CartHandler>();
+        cartsText.text = "Carts: " + currentCartAmount + "/" + maxCartAmount;
     }
 
     // Update is called once per frame
@@ -24,8 +29,9 @@ public class CollectionHandler : MonoBehaviour
         if (collision.gameObject.CompareTag("CartCollectible"))
         {
             Destroy(collision.gameObject);
-            cartAmount++;
+            currentCartAmount++;
             ch.PickupCart();
+            cartsText.text = "Carts: " + currentCartAmount + "/" + maxCartAmount;
         }
     }
 }
