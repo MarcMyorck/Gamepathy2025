@@ -8,9 +8,10 @@ public class CartFollower : MonoBehaviour
     public float maxFollowSpeed = 50f;      // clamp the corrective velocity
     public float damping = 5f;              // damps relative velocity for stability
     public float rotationSpeed = 10f;       // how fast the cart rotates to face movement
+    public float maxDistance = 5f;
 
     private Transform target;               // player transform
-    private Vector2 targetLocalOffset = new Vector2(0.5f, 0); // offset in local player space
+    private Vector2 targetLocalOffset ; // offset in local player space
     private bool hasTarget = false;
 
     void Awake()
@@ -33,12 +34,12 @@ public class CartFollower : MonoBehaviour
         Vector2 relativeVel = rb.linearVelocity - targetVel;
 
         // spring force (proportional to distance)
-        Vector2 springForce = toTarget * followStrength;
+        Vector2 springForce = (toTarget * followStrength) * Random.Range(0.5f, 1.5f);
 
         // damping: reduce oscillation using relative velocity
-        Vector2 dampingForce = -relativeVel * damping;
+        Vector2 dampingForce = (-relativeVel * damping) * Random.Range(0.5f, 1.5f);
 
-        Vector2 total = springForce + dampingForce;
+        Vector2 total = (springForce + dampingForce);
 
         // Optionally clamp the applied corrective velocity to avoid explosions
         if (total.magnitude > maxFollowSpeed * rb.mass) total = total.normalized * maxFollowSpeed * rb.mass;
@@ -53,6 +54,11 @@ public class CartFollower : MonoBehaviour
         //    float z = Mathf.LerpAngle(transform.eulerAngles.z, angle, rotationSpeed * Time.fixedDeltaTime);
         //    rb.MoveRotation(z);
         //}
+
+        if (Vector2.Distance(desired, transform.position) > maxDistance)
+        {
+            transform.position = desired;
+        }
     }
 
     // Set the player as target and define the offset in player's local space
