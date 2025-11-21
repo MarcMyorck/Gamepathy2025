@@ -362,8 +362,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   strength: 1
   walkPath:
-  - {x: 22.95, y: 4}
-  - {x: 22.95, y: 0.8}
+  - {x: 25.9, y: 4}
+  - {x: 25.9, y: 0.8}
   walkSpeed: 1
 --- !u!61 &87102053
 BoxCollider2D:
@@ -1108,8 +1108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   strength: 1
   walkPath:
-  - {x: 44.76, y: 4}
-  - {x: 44.76, y: 0.6}
+  - {x: 47.71, y: 4}
+  - {x: 47.71, y: 0.6}
   walkSpeed: 1
 --- !u!1 &244735470
 GameObject:
@@ -1148,7 +1148,7 @@ Camera:
   m_GameObject: {fileID: 244735470}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1461,6 +1461,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7763157469600084570, guid: e722b50ff819c78409a4211a70aae581, type: 3}
   m_PrefabInstance: {fileID: 591454004}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &419246873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 419246874}
+  m_Layer: 0
+  m_Name: Enemys
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &419246874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419246873}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1253284437}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &430269568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,15 +1516,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430269568}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.61615, y: -1.04721, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -83.464554, y: -2.60392, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 76020159}
   - {fileID: 592313215}
   - {fileID: 547503169}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 956728649}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &449765852
 GameObject:
@@ -1793,14 +1824,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452792299}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.82261, y: -1.50556, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -89.258095, y: -3.0622702, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 244961231}
   - {fileID: 229232092}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 956728649}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &490132988
 GameObject:
@@ -1859,14 +1890,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503515292}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -91.0807, y: -1.55671, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 91687898}
   - {fileID: 2141743504}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 956728649}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &511923458
 GameObject:
@@ -2437,6 +2468,37 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1265219217967868311, guid: 30dc5d917c4d46c489240b8e23c652c0, type: 3}
   m_PrefabInstance: {fileID: 2106638139}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &751910006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751910007}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &751910007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751910006}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1253284437}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &756560660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2985,6 +3047,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &956728648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 956728649}
+  m_Layer: 0
+  m_Name: BiomParkingplace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &956728649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956728648}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 91.0807, y: 1.55671, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 452792300}
+  - {fileID: 430269569}
+  - {fileID: 503515293}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &971632835
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,7 +3109,7 @@ Transform:
   m_GameObject: {fileID: 971632835}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.99999464, w: -0.0032909208}
-  m_LocalPosition: {x: 35.28, y: 0.63, z: 0}
+  m_LocalPosition: {x: 33.11, y: 0.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3137,8 +3233,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   strength: 1
   walkPath:
-  - {x: 32.33, y: 2}
-  - {x: 32.33, y: 0.65}
+  - {x: 33.11, y: 4}
+  - {x: 33.11, y: 0.65}
   walkSpeed: 1
 --- !u!1 &1012448909
 GameObject:
@@ -4150,6 +4246,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1253284436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1253284437}
+  m_Layer: 0
+  m_Name: BiomPark
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1253284437
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253284436}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 91.0807, y: 1.55671, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1873920977}
+  - {fileID: 751910007}
+  - {fileID: 419246874}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1324180646
 GameObject:
   m_ObjectHideFlags: 0
@@ -5227,6 +5357,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5563842553823379143, guid: b9a1f08a401041649a703b5dfce5fd26, type: 3}
   m_PrefabInstance: {fileID: 1691006988}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1873920976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1873920977}
+  m_Layer: 0
+  m_Name: Environment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1873920977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873920976}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1253284437}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1911075968
 GameObject:
   m_ObjectHideFlags: 0
@@ -5865,8 +6026,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   strength: 1
   walkPath:
-  - {x: 53.04, y: 4}
-  - {x: 53.04, y: 0.5}
+  - {x: 57.96, y: 4}
+  - {x: 57.96, y: 0.5}
   walkSpeed: 1
 --- !u!1 &2065758969
 GameObject:
@@ -6416,7 +6577,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 244735473}
   - {fileID: 1688903930}
-  - {fileID: 452792300}
-  - {fileID: 430269569}
-  - {fileID: 503515293}
   - {fileID: 1032337788}
+  - {fileID: 956728649}
+  - {fileID: 1253284437}
