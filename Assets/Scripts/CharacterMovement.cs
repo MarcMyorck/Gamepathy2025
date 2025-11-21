@@ -3,12 +3,16 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     Rigidbody2D rb;
+    public string direction = "right";
     public float softcapSpeed = 10;
-    private float dashTimer = 0;
-    public float dashCooldown = 1;
     public float moveForce = 10;
     public float jumpForce = 100;
+    private int leftExtraJumpAmount = 0;
+    public int maxExtraJumpAmount = 1;
     public float dashForce = 1000;
+    private float dashTimer = 0;
+    public float dashCooldown = 1;
+    public CartHandler ch;
 
     public float currentSpeed = 0;
 
@@ -18,6 +22,7 @@ public class CharacterMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         dashTimer = 0f;
         rb.freezeRotation = true;
+        ch = GetComponent<CartHandler>();
     }
 
     private void FixedUpdate()
@@ -25,6 +30,11 @@ public class CharacterMovement : MonoBehaviour
         if (dashTimer < dashCooldown)
         {
             dashTimer = dashTimer + Time.deltaTime;
+        }
+
+        if (IsGrounded() && (leftExtraJumpAmount < maxExtraJumpAmount))
+        {
+            leftExtraJumpAmount = maxExtraJumpAmount;
         }
 
         currentSpeed = rb.linearVelocityX;
@@ -37,6 +47,7 @@ public class CharacterMovement : MonoBehaviour
             if (!(rb.linearVelocityX < -softcapSpeed))
             {
                 rb.AddForce(Vector2.left * moveForce);
+                direction = "left";
             }
         }
         else if (dir > 0f)
@@ -44,6 +55,7 @@ public class CharacterMovement : MonoBehaviour
             if (!(rb.linearVelocityX > softcapSpeed))
             {
                 rb.AddForce(Vector2.right * moveForce);
+                direction = "right";
             }
         }
     }
@@ -57,12 +69,14 @@ public class CharacterMovement : MonoBehaviour
                 rb.linearVelocityX = 0f;
                 rb.AddForce(Vector2.left * dashForce);
                 dashTimer = 0f;
+                ch.Dash(dir, dashForce);
             }
             else if (dir > 0f)
             {
                 rb.linearVelocityX = 0f;
                 rb.AddForce(Vector2.right * dashForce);
                 dashTimer = 0f;
+                ch.Dash(dir, dashForce);
             }
         }
     }
@@ -71,6 +85,12 @@ public class CharacterMovement : MonoBehaviour
     {
         if (IsGrounded())
         {
+            rb.AddForce(Vector2.up * jumpForce);
+        }
+        else if (leftExtraJumpAmount > 0)
+        {
+            leftExtraJumpAmount--;
+            rb.linearVelocityY = 0f;
             rb.AddForce(Vector2.up * jumpForce);
         }
     }

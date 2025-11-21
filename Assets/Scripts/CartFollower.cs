@@ -1,15 +1,16 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class CartFollower : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float followStrength = 50f;      // spring force toward desired position
-    public float maxFollowSpeed = 10f;      // clamp the corrective velocity
+    public float maxFollowSpeed = 50f;      // clamp the corrective velocity
     public float damping = 5f;              // damps relative velocity for stability
     public float rotationSpeed = 10f;       // how fast the cart rotates to face movement
 
     private Transform target;               // player transform
-    private Vector2 targetLocalOffset = Vector2.zero; // offset in local player space
+    private Vector2 targetLocalOffset = new Vector2(0.5f, 0); // offset in local player space
     private bool hasTarget = false;
 
     void Awake()
@@ -26,29 +27,32 @@ public class CartFollower : MonoBehaviour
 
         // compute spring-like force: proportional to displacement and damp relative velocity
         Vector2 toTarget = desired - rb.position;
-        //Vector2 relativeVel = rb.linearVelocity - (Vector2)target.GetComponent<Rigidbody2D>()?.linearVelocity ?? Vector2.zero;
+
+        Rigidbody2D targetRb = target.GetComponent<Rigidbody2D>();
+        Vector2 targetVel = targetRb != null ? targetRb.linearVelocity : Vector2.zero;
+        Vector2 relativeVel = rb.linearVelocity - targetVel;
 
         // spring force (proportional to distance)
         Vector2 springForce = toTarget * followStrength;
 
         // damping: reduce oscillation using relative velocity
-        //Vector2 dampingForce = -relativeVel * damping;
+        Vector2 dampingForce = -relativeVel * damping;
 
-       // Vector2 total = springForce + dampingForce;
+        Vector2 total = springForce + dampingForce;
 
         // Optionally clamp the applied corrective velocity to avoid explosions
-       // if (total.magnitude > maxFollowSpeed * rb.mass) total = total.normalized * maxFollowSpeed * rb.mass;
+        if (total.magnitude > maxFollowSpeed * rb.mass) total = total.normalized * maxFollowSpeed * rb.mass;
 
-      //  rb.AddForce(total);
+        rb.AddForce(total);
 
         // rotate cart to face movement direction (optional)
-        Vector2 lookDir = rb.linearVelocity;
-        if (lookDir.sqrMagnitude > 0.001f)
-        {
-            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-            float z = Mathf.LerpAngle(transform.eulerAngles.z, angle, rotationSpeed * Time.fixedDeltaTime);
-            rb.MoveRotation(z);
-        }
+        //Vector2 lookDir = rb.linearVelocity;
+        //if (lookDir.sqrMagnitude > 0.001f)
+        //{
+        //    float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        //    float z = Mathf.LerpAngle(transform.eulerAngles.z, angle, rotationSpeed * Time.fixedDeltaTime);
+        //    rb.MoveRotation(z);
+        //}
     }
 
     // Set the player as target and define the offset in player's local space
@@ -61,9 +65,14 @@ public class CartFollower : MonoBehaviour
         // ensure cart can collide and has a Rigidbody2D (non-kinematic) for physics interactions
         if (rb != null)
         {
-            rb.isKinematic = false;
+            rb.bodyType = RigidbodyType2D.Dynamic;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation; // optional: allow rotation via MoveRotation or unfreeze if you want physics rotation
         }
+    }
+
+    public void SwitchTargetDirection()
+    {
+        targetLocalOffset = -targetLocalOffset;
     }
 
     // Detach from target so cart becomes independent

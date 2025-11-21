@@ -119,6 +119,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &287990545
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1941266080825044313, guid: e722b50ff819c78409a4211a70aae581, type: 3}
+      propertyPath: m_Name
+      value: CartCollectible (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763157469600084570, guid: e722b50ff819c78409a4211a70aae581, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763157469600084570, guid: e722b50ff819c78409a4211a70aae581, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763157469600084570, guid: e722b50ff819c78409a4211a70aae581, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763157469600084570, guid: e722b50ff819c78409a4211a70aae581, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763157469600084570, guid: e722b50ff819c78409a4211a70aae581, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763157469600084570, guid: e722b50ff819c78409a4211a70aae581, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763157469600084570, guid: e722b50ff819c78409a4211a70aae581, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763157469600084570, guid: e722b50ff819c78409a4211a70aae581, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763157469600084570, guid: e722b50ff819c78409a4211a70aae581, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763157469600084570, guid: e722b50ff819c78409a4211a70aae581, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e722b50ff819c78409a4211a70aae581, type: 3}
 --- !u!1 &426076214
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +341,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &499884415 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5298064052518032919, guid: 30dc5d917c4d46c489240b8e23c652c0, type: 3}
+  m_PrefabInstance: {fileID: 6851380587049915153}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!20 &519420031 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1357344724077656015, guid: 2f477d27b32f93e4ea480756a1f72003, type: 3}
@@ -549,23 +617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
---- !u!1 &1898218917 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6507800455938656909, guid: b9a1f08a401041649a703b5dfce5fd26, type: 3}
-  m_PrefabInstance: {fileID: 2963700405540153204}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1898218926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1898218917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b2582e1a498acd4daeca85838054f6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CartHandler
 --- !u!1001 &1019704105372680063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -688,6 +739,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 823363344364850698, guid: b9a1f08a401041649a703b5dfce5fd26, type: 3}
+      propertyPath: cartsText
+      value: 
+      objectReference: {fileID: 499884415}
     - target: {fileID: 2515014557146212528, guid: b9a1f08a401041649a703b5dfce5fd26, type: 3}
       propertyPath: livesText
       value: 
@@ -739,10 +794,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6507800455938656909, guid: b9a1f08a401041649a703b5dfce5fd26, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1898218926}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9a1f08a401041649a703b5dfce5fd26, type: 3}
 --- !u!1001 &3195848286984977014
 PrefabInstance:
@@ -1030,3 +1082,4 @@ SceneRoots:
   - {fileID: 7710095244956387574}
   - {fileID: 2093482232023963333}
   - {fileID: 1019704105372680063}
+  - {fileID: 287990545}

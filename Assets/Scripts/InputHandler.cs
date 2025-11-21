@@ -19,6 +19,15 @@ public class InputHandler : MonoBehaviour
         dashAction = InputSystem.actions.FindAction("Sprint");
     }
 
+    private void Update()
+    {
+        // Jumping
+        if (jumpAction.triggered)
+        {
+            cm.TryJump();
+        }
+    }
+
     private void FixedUpdate()
     {
         Vector2 moveValue = moveAction.ReadValue<Vector2>();
@@ -27,12 +36,6 @@ public class InputHandler : MonoBehaviour
         if (moveAction.IsPressed())
         {
             cm.MoveHorizontal(moveValue.x);
-        }
-
-        // Jumping
-        if (jumpAction.IsPressed())
-        {
-            cm.TryJump();
         }
 
         // Dashing
