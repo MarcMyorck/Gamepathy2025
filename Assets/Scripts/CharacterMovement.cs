@@ -98,11 +98,11 @@ public class CharacterMovement : MonoBehaviour
     private bool IsGrounded()
     {
         float radius = 0.1f;
-        Vector2 circleOffset = new Vector2(0f, -0.7f);
+        Vector2 circleOffset = new Vector2(0f, -1.1f);
 
         Vector2 pos = (Vector2)transform.position + circleOffset;
         Collider2D c = Physics2D.OverlapCircle(pos, radius);
-        // Debug.DrawLine(pos + Vector2.left * radius, pos + Vector2.right * radius, c ? Color.green : Color.red);
+         Debug.DrawLine(pos + Vector2.left * radius, pos + Vector2.right * radius, c ? Color.green : Color.red);
         return c != null;
     }
 }
