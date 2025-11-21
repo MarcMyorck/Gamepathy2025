@@ -265,6 +265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f9ee8107a3bb7499896d0a2d57b257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectionHandler
+  currentCartAmount: 0
+  maxCartAmount: 0
   cartsText: {fileID: 0}
 --- !u!114 &2391708171756190336
 MonoBehaviour:
@@ -296,5 +298,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PauseManager
   pauseMenu: {fileID: 0}
   continueBtn: {fileID: 0}
-  settingsBtn: {fileID: 0}
   mainMenuBtn: {fileID: 0}

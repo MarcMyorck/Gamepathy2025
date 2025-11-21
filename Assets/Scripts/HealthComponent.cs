@@ -1,6 +1,7 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthComponent : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class HealthComponent : MonoBehaviour
     public float damageKnockback = 10;
     private Rigidbody2D rb;
     public TextMeshProUGUI livesText;
+    public AudioSource hurtAS;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,10 +33,11 @@ public class HealthComponent : MonoBehaviour
 
     public void Hurt(float damage)
     {
+        hurtAS.Play();
         currentHealth -= damage;
         if (currentHealth <= 0 )
         {
-            // Handle Death
+            SceneManager.LoadScene("GameOver");
         }
     }
 

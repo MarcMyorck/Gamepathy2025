@@ -13,6 +13,7 @@ public class CharacterMovement : MonoBehaviour
     private float dashTimer = 0;
     public float dashCooldown = 1;
     public CartHandler ch;
+    public AudioSource jumpAS;
 
     public float currentSpeed = 0;
 
@@ -87,10 +88,12 @@ public class CharacterMovement : MonoBehaviour
     {
         if (IsGrounded())
         {
+            jumpAS.Play();
             rb.AddForce(Vector2.up * jumpForce);
         }
         else if (leftExtraJumpAmount > 0)
         {
+            jumpAS.Play();
             leftExtraJumpAmount--;
             rb.linearVelocityY = 0f;
             rb.AddForce(Vector2.up * jumpForce);
