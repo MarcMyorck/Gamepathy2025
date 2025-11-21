@@ -3,11 +3,14 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     Rigidbody2D rb;
+    public float softcapSpeed = 10;
     private float dashTimer = 0;
     public float dashCooldown = 1;
     public float moveForce = 10;
     public float jumpForce = 100;
-    public float dashForce = 100;
+    public float dashForce = 1000;
+
+    public float currentSpeed = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,17 +26,25 @@ public class CharacterMovement : MonoBehaviour
         {
             dashTimer = dashTimer + Time.deltaTime;
         }
+
+        currentSpeed = rb.linearVelocityX;
     }
 
     public void MoveHorizontal(float dir)
     {
         if (dir < 0f)
         {
-            rb.AddForce(Vector2.left * moveForce);
+            if (!(rb.linearVelocityX < -softcapSpeed))
+            {
+                rb.AddForce(Vector2.left * moveForce);
+            }
         }
         else if (dir > 0f)
         {
-            rb.AddForce(Vector2.right * moveForce);
+            if (!(rb.linearVelocityX > softcapSpeed))
+            {
+                rb.AddForce(Vector2.right * moveForce);
+            }
         }
     }
 
