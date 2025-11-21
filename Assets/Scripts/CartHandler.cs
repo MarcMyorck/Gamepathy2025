@@ -29,6 +29,7 @@ public class CartHandler : MonoBehaviour
             {
                 cart.GetComponent<CartFollower>().SwitchTargetDirection();
                 cart.transform.position = new Vector3(transform.position.x - (cart.transform.position.x - transform.position.x), cart.transform.position.y, cart.transform.position.z);
+                cart.GetComponent<SpriteRenderer>().flipX = (direction == "right");
             }
             direction = cm.direction;
         }
@@ -40,7 +41,7 @@ public class CartHandler : MonoBehaviour
 
         // Determine offset for the new cart based on count
         int index = carts.Count;
-        Vector2 offset = new Vector2(forwardOffset + index * spacing, 0f);
+        Vector2 offset = new Vector2(forwardOffset + index * spacing, -0.1f);
 
         // Spawn cart
         GameObject cart;
