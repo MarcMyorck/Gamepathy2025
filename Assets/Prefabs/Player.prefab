@@ -217,7 +217,7 @@ MonoBehaviour:
   direction: right
   softcapSpeed: 5
   moveForce: 8
-  jumpForce: 350
+  jumpForce: 330
   maxExtraJumpAmount: 1
   dashForce: 500
   dashCooldown: 1
