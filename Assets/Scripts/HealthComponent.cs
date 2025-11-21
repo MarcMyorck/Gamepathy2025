@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class HealthComponent : MonoBehaviour
     public float invincibilityCooldown = 1;
     public float damageKnockback = 10;
     private Rigidbody2D rb;
+    public TextMeshProUGUI livesText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,6 +26,7 @@ public class HealthComponent : MonoBehaviour
         {
             invincibilityTimer = invincibilityTimer + Time.deltaTime;
         }
+        livesText.text = "Lives: " + currentHealth;
     }
 
     public void Hurt(float damage)
