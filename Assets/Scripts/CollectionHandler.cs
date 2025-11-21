@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class CollectionHandler : MonoBehaviour
 {
-    private int currentCartAmount;
-    private int maxCartAmount;
+    public int currentCartAmount;
+    public int maxCartAmount;
     private CartHandler ch;
     public TextMeshProUGUI cartsText;
+    public AudioSource collectAS;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +29,7 @@ public class CollectionHandler : MonoBehaviour
         // Types of Collectibles
         if (collision.gameObject.CompareTag("CartCollectible"))
         {
+            collectAS.Play();
             Destroy(collision.gameObject);
             currentCartAmount++;
             ch.PickupCart();

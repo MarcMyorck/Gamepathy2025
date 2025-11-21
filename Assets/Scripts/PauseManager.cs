@@ -8,7 +8,6 @@ public class PauseManager : MonoBehaviour
     InputHandler ih;
     public GameObject pauseMenu;
     public Button continueBtn;
-    public Button settingsBtn;
     public Button mainMenuBtn;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,14 +15,7 @@ public class PauseManager : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         continueBtn.onClick.AddListener(ContinueGame);
-        settingsBtn.onClick.AddListener(OpenSettings);
         mainMenuBtn.onClick.AddListener(ExitToMainMenu);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void Pause(InputHandler ihtemp)
@@ -49,11 +41,6 @@ public class PauseManager : MonoBehaviour
     void ContinueGame()
     {
         UnPause();
-    }
-
-    void OpenSettings()
-    {
-        // TODO
     }
 
     void ExitToMainMenu()
