@@ -44,18 +44,20 @@ public class CharacterMovement : MonoBehaviour
     {
         if (dir < 0f)
         {
+            GetComponent<SpriteRenderer>().flipX = true;
+            direction = "left";
             if (!(rb.linearVelocityX < -softcapSpeed))
             {
                 rb.AddForce(Vector2.left * moveForce);
-                direction = "left";
             }
         }
         else if (dir > 0f)
         {
+            GetComponent<SpriteRenderer>().flipX = false;
+            direction = "right";
             if (!(rb.linearVelocityX > softcapSpeed))
             {
                 rb.AddForce(Vector2.right * moveForce);
-                direction = "right";
             }
         }
     }
