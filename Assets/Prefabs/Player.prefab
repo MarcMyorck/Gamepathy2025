@@ -223,6 +223,7 @@ MonoBehaviour:
   dashForce: 500
   dashCooldown: 1
   ch: {fileID: 0}
+  jumpAS: {fileID: 0}
   currentSpeed: 0
 --- !u!114 &4992600441056814903
 MonoBehaviour:
@@ -249,10 +250,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f6e1eb7cccb1774da456631b962c552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthComponent
-  maxHealth: 3
+  maxHealth: 1
   invincibilityCooldown: 1
   damageKnockback: 10
   livesText: {fileID: 0}
+  hurtAS: {fileID: 0}
 --- !u!114 &823363344364850698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +270,7 @@ MonoBehaviour:
   currentCartAmount: 0
   maxCartAmount: 0
   cartsText: {fileID: 0}
+  collectAS: {fileID: 0}
 --- !u!114 &2391708171756190336
 MonoBehaviour:
   m_ObjectHideFlags: 0
