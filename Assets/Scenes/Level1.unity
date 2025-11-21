@@ -146,7 +146,7 @@ Transform:
   m_GameObject: {fileID: 76020158}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.34, y: 3.09, z: 0}
+  m_LocalPosition: {x: -12.95, y: 3.66, z: 0}
   m_LocalScale: {x: 4.164401, y: 4.164401, z: 4.164401}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -190,7 +190,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.18, y: 1.26}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -245,8 +245,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.9150943, g: 0.90053385, b: 0.056114297, a: 1}
+  m_Sprite: {fileID: -5933351914236012043, guid: 671ac9ca89780724d8d1fd7cd2c49cf9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -266,10 +266,11 @@ GameObject:
   m_Component:
   - component: {fileID: 87102049}
   - component: {fileID: 87102051}
-  - component: {fileID: 87102050}
+  - component: {fileID: 87102053}
+  - component: {fileID: 87102052}
   m_Layer: 0
   m_Name: Barrier (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,58 +284,12 @@ Transform:
   m_GameObject: {fileID: 87102048}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.99999464, w: -0.0032909208}
-  m_LocalPosition: {x: 5.74, y: 0.98, z: 0}
+  m_LocalPosition: {x: 22.95, y: 1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 91687898}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180.377}
---- !u!61 &87102050
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87102048}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.21133333}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!212 &87102051
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -393,6 +348,69 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &87102052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87102048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d444c83b01ab34e9d516359197a317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  strength: 1
+  walkPath:
+  - {x: 22.95, y: 2}
+  - {x: 22.95, y: 0.5}
+  walkSpeed: 1
+--- !u!61 &87102053
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87102048}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.21133333}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.28866667}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &91687897
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +422,7 @@ GameObject:
   - component: {fileID: 91687898}
   m_Layer: 0
   m_Name: Barriers
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -892,9 +910,10 @@ GameObject:
   - component: {fileID: 242859828}
   - component: {fileID: 242859830}
   - component: {fileID: 242859829}
+  - component: {fileID: 242859831}
   m_Layer: 0
   m_Name: Barrier (3)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -908,7 +927,7 @@ Transform:
   m_GameObject: {fileID: 242859827}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.99999464, w: -0.0032909208}
-  m_LocalPosition: {x: 28.75, y: 0.83, z: 0}
+  m_LocalPosition: {x: 44.760002, y: 1.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1018,6 +1037,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &242859831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242859827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d444c83b01ab34e9d516359197a317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  strength: 1
+  walkPath:
+  - {x: 44.76, y: 2}
+  - {x: 44.76, y: 0.5}
+  walkSpeed: 1
 --- !u!1 &244735470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1738,7 +1774,7 @@ GameObject:
   - component: {fileID: 503515293}
   m_Layer: 0
   m_Name: Enemys
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1752,7 +1788,7 @@ Transform:
   m_GameObject: {fileID: 503515292}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.65023, y: 0.92548, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1771,9 +1807,10 @@ GameObject:
   - component: {fileID: 511923459}
   - component: {fileID: 511923461}
   - component: {fileID: 511923460}
+  - component: {fileID: 511923462}
   m_Layer: 0
   m_Name: Npc (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1787,7 +1824,7 @@ Transform:
   m_GameObject: {fileID: 511923458}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.55, y: -1.14, z: 0}
+  m_LocalPosition: {x: 53.21, y: 4.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1823,7 +1860,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -1897,6 +1934,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &511923462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511923458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d444c83b01ab34e9d516359197a317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  strength: 1
+  walkPath:
+  - {x: 41, y: 4.57}
+  - {x: 53, y: 4.57}
+  walkSpeed: 3
 --- !u!1 &532538048
 GameObject:
   m_ObjectHideFlags: 0
@@ -2389,6 +2443,7 @@ GameObject:
   - component: {fileID: 689188808}
   - component: {fileID: 689188807}
   - component: {fileID: 689188806}
+  - component: {fileID: 689188811}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -2405,7 +2460,7 @@ Transform:
   m_GameObject: {fileID: 689188804}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.23, y: 3.09, z: 0}
+  m_LocalPosition: {x: 46.86, y: 7.27, z: 0}
   m_LocalScale: {x: 0.67296, y: 0.67296, z: 0.67296}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2435,10 +2490,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c54bdbfc8437784e9fcc84b2958c3df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
+  softcapSpeed: 10
   dashCooldown: 1
-  moveForce: 5
-  jumpForce: 50
+  moveForce: 8
+  jumpForce: 45
   dashForce: 400
+  currentSpeed: 0
 --- !u!61 &689188808
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2570,6 +2627,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &689188811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689188804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6e1eb7cccb1774da456631b962c552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthComponent
+  maxHealth: 3
+  invincibilityCooldown: 1
+  damageKnockback: 8
+  livesText: {fileID: 0}
 --- !u!1 &756560660
 GameObject:
   m_ObjectHideFlags: 0
@@ -3129,9 +3202,10 @@ GameObject:
   - component: {fileID: 971632836}
   - component: {fileID: 971632838}
   - component: {fileID: 971632837}
+  - component: {fileID: 971632839}
   m_Layer: 0
   m_Name: Barrier (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3145,7 +3219,7 @@ Transform:
   m_GameObject: {fileID: 971632835}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.99999464, w: -0.0032909208}
-  m_LocalPosition: {x: 16.32, y: 0.91, z: 0}
+  m_LocalPosition: {x: 32.33, y: 1.3199999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3181,7 +3255,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -3255,6 +3329,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &971632839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971632835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d444c83b01ab34e9d516359197a317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  strength: 1
+  walkPath:
+  - {x: 32.33, y: 2}
+  - {x: 32.33, y: -1}
+  walkSpeed: 1
 --- !u!1 &1012448909
 GameObject:
   m_ObjectHideFlags: 0
@@ -3677,9 +3768,10 @@ GameObject:
   - component: {fileID: 1186243612}
   - component: {fileID: 1186243614}
   - component: {fileID: 1186243613}
+  - component: {fileID: 1186243615}
   m_Layer: 0
   m_Name: Barrier
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3693,7 +3785,7 @@ Transform:
   m_GameObject: {fileID: 1186243611}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.99999464, w: -0.0032909208}
-  m_LocalPosition: {x: -0.39, y: 1.02, z: 0}
+  m_LocalPosition: {x: 15.62, y: 1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3729,7 +3821,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -3803,6 +3895,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1186243615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186243611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d444c83b01ab34e9d516359197a317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  strength: 1
+  walkPath:
+  - {x: 15.62, y: 2}
+  - {x: 15.62, y: 0.5}
+  walkSpeed: 1
 --- !u!1 &1192418701
 GameObject:
   m_ObjectHideFlags: 0
@@ -4773,9 +4882,10 @@ GameObject:
   - component: {fileID: 1532349390}
   - component: {fileID: 1532349392}
   - component: {fileID: 1532349391}
+  - component: {fileID: 1532349393}
   m_Layer: 0
   m_Name: Npc (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4789,7 +4899,7 @@ Transform:
   m_GameObject: {fileID: 1532349389}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.93, y: -13.03, z: 0}
+  m_LocalPosition: {x: 39.29, y: -7.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4825,7 +4935,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -4899,6 +5009,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1532349393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532349389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d444c83b01ab34e9d516359197a317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  strength: 1
+  walkPath:
+  - {x: 24, y: -7.76}
+  - {x: 40, y: -7.76}
+  walkSpeed: 3
 --- !u!1 &1585982623
 GameObject:
   m_ObjectHideFlags: 0
@@ -5198,7 +5325,7 @@ Transform:
   m_GameObject: {fileID: 1688903929}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.6, y: -2.51, z: 0}
+  m_LocalPosition: {x: -45.79, y: -6.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5627,9 +5754,10 @@ GameObject:
   - component: {fileID: 2045364679}
   - component: {fileID: 2045364681}
   - component: {fileID: 2045364680}
+  - component: {fileID: 2045364682}
   m_Layer: 0
   m_Name: Npc
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5643,7 +5771,7 @@ Transform:
   m_GameObject: {fileID: 2045364678}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.59298, y: -9.20996, z: 0}
+  m_LocalPosition: {x: 13, y: -3.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5679,7 +5807,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -5753,6 +5881,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2045364682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045364678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d444c83b01ab34e9d516359197a317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  strength: 1
+  walkPath:
+  - {x: 1, y: -3.67}
+  - {x: 13, y: -3.67}
+  walkSpeed: 2
 --- !u!1 &2064058429
 GameObject:
   m_ObjectHideFlags: 0
@@ -5764,9 +5909,10 @@ GameObject:
   - component: {fileID: 2064058430}
   - component: {fileID: 2064058432}
   - component: {fileID: 2064058431}
+  - component: {fileID: 2064058433}
   m_Layer: 0
   m_Name: Barrier (4)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5780,7 +5926,7 @@ Transform:
   m_GameObject: {fileID: 2064058429}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.99999464, w: -0.0032909208}
-  m_LocalPosition: {x: 37.03, y: 0.78, z: 0}
+  m_LocalPosition: {x: 53.04, y: 1.1899999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5890,6 +6036,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2064058433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064058429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d444c83b01ab34e9d516359197a317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  strength: 1
+  walkPath:
+  - {x: 53.04, y: 2}
+  - {x: 53.04, y: 0.5}
+  walkSpeed: 1
 --- !u!1 &2065758969
 GameObject:
   m_ObjectHideFlags: 0
@@ -6326,7 +6489,7 @@ Transform:
   m_GameObject: {fileID: 2141743503}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.87298, y: 5.06996, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
