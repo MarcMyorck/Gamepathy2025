@@ -14,7 +14,7 @@ public class LevelFinishHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (true) // Check for points?
+        if (player.GetComponent<CollectionHandler>().currentCartAmount > 0)
         {
             SessionData.cartsCollected = player.GetComponent<CollectionHandler>().currentCartAmount;
             SessionData.cartsTotal = player.GetComponent<CollectionHandler>().maxCartAmount;

@@ -17,12 +17,12 @@ public class CollectionHandler : MonoBehaviour
     {
         maxEmpathie = GameObject.FindGameObjectsWithTag("DialogueTrigger").Length - 1;
         currentEmpathie = 0;
-        empathieText.text = "Empathie: " + currentEmpathie + "/" + maxEmpathie;
+        empathieText.text = "        " + currentEmpathie + "/" + maxEmpathie;
 
         maxCartAmount = GameObject.FindGameObjectsWithTag("CartCollectible").Length + maxEmpathie;
         currentCartAmount = 0;
         ch = GetComponent<CartHandler>();
-        cartsText.text = "Carts: " + currentCartAmount + "/" + maxCartAmount;
+        cartsText.text = "        " + currentCartAmount + "/" + maxCartAmount;
     }
 
     // Update is called once per frame
@@ -44,7 +44,7 @@ public class CollectionHandler : MonoBehaviour
     public void IncreaseEmpathie()
     {
         currentEmpathie++;
-        empathieText.text = "Empathie: " + currentEmpathie + "/" + maxEmpathie;
+        empathieText.text = "        " + currentEmpathie + "/" + maxEmpathie;
     }
 
     public void PickupCartInitiation()
@@ -52,6 +52,6 @@ public class CollectionHandler : MonoBehaviour
         collectAS.Play();
         currentCartAmount++;
         ch.PickupCart();
-        cartsText.text = "Carts: " + currentCartAmount + "/" + maxCartAmount;
+        cartsText.text = "        " + currentCartAmount + "/" + maxCartAmount;
     }
 }
