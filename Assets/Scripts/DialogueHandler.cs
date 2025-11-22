@@ -75,6 +75,12 @@ public class DialogueHandler : MonoBehaviour
                 actions.enabled = true;
                 background.enabled = true;
                 break;
+            case 7:
+                text.enabled = true;
+                text.text = "Ich brauche den Wagen!";
+                actions.enabled = true;
+                background.enabled = true;
+                break;
         }
     }
 

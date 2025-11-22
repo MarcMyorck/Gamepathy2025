@@ -46,6 +46,8 @@ public class PauseManager : MonoBehaviour
     void ExitToMainMenu()
     {
         UnPause();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         SceneManager.LoadScene("StartMenu");
     }
 }
