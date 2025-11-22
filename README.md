@@ -68,3 +68,20 @@ Assets:
 
 Font: Pixelify\_Sans
 
+Sounds: https://pixabay.com/sound-effects/search/game/
+cottagecore-17463
+
+game-over-417465
+
+jump\_c\_02-102843
+
+medium-text-blip-14855
+
+mixkit-completion-of-a-level-2063
+
+mixkit-video-game-treasure-2066
+
+no-copyright-gaming-background-music-for-minecraftgaming-405002
+
+punch-431475
+

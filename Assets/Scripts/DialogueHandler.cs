@@ -22,15 +22,15 @@ public class DialogueHandler : MonoBehaviour
             {
                 alreadyActivated = true;
                 ih = collision.gameObject.GetComponent<InputHandler>();
-                StartDialogue(dialogueNumber);
+                StartDialogue();
             }
         }
     }
 
-    private void StartDialogue(int number)
+    private void StartDialogue()
     {
         ih.SwitchInputMode(this);
-        switch (number)
+        switch (dialogueNumber)
         {
             case 0:
                 text.enabled = true;
@@ -50,6 +50,21 @@ public class DialogueHandler : MonoBehaviour
             case 3:
                 text.enabled = true;
                 text.text = "Ich habe nur diesen Wagen!";
+                background.enabled = true;
+                break;
+            case 4:
+                text.enabled = true;
+                text.text = "Warum passiert mir immer sowas?";
+                background.enabled = true;
+                break;
+            case 5:
+                text.enabled = true;
+                text.text = "Ich flehe dich an!";
+                background.enabled = true;
+                break;
+            case 6:
+                text.enabled = true;
+                text.text = "Alles, nur nicht den Wagen!";
                 background.enabled = true;
                 break;
         }
