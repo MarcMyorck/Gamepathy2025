@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class DialogueHandler : MonoBehaviour
 {
     private InputHandler ih;
+    public CartHandler cartH;
+    public CollectionHandler collectionH;
 
     public int dialogueNumber = 1;
     public bool alreadyActivated = false;
@@ -32,25 +34,31 @@ public class DialogueHandler : MonoBehaviour
         {
             case 1:
                 text.enabled = true;
-                text.text = "Dialog 1";
+                text.text = "Bitte lass mir meinen Wagen!";
                 background.enabled = true;
                 break;
             case 2:
+                text.enabled = true;
+                text.text = "Meine Familie braucht diesen Wagen!";
+                background.enabled = true;
                 break;
             case 3:
+                text.enabled = true;
+                text.text = "Ich habe nur diesen Wagen!";
+                background.enabled = true;
                 break;
         }
     }
 
     public void Confirm()
     {
-        // Todo
+        cartH.PickupCart();
         EndDialogue();
     }
 
     public void Deny()
     {
-        // Todo
+        collectionH.IncreaseEmpathie();
         EndDialogue();
     }
 

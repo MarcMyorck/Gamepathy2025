@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - CartCollectible
   - Cart
+  - DialogueTrigger
   layers:
   - Default
   - TransparentFX

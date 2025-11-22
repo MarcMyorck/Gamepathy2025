@@ -7,12 +7,19 @@ public class CollectionHandler : MonoBehaviour
     public int maxCartAmount;
     private CartHandler ch;
     public TextMeshProUGUI cartsText;
+    public int currentEmpathie;
+    public int maxEmpathie;
+    public TextMeshProUGUI empathieText;
     public AudioSource collectAS;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        maxCartAmount = GameObject.FindGameObjectsWithTag("CartCollectible").Length;
+        maxEmpathie = GameObject.FindGameObjectsWithTag("DialogueTrigger").Length;
+        currentEmpathie = 0;
+        empathieText.text = "Empathie: " + currentEmpathie + "/" + maxEmpathie;
+
+        maxCartAmount = GameObject.FindGameObjectsWithTag("CartCollectible").Length + maxEmpathie;
         currentCartAmount = 0;
         ch = GetComponent<CartHandler>();
         cartsText.text = "Carts: " + currentCartAmount + "/" + maxCartAmount;
@@ -35,5 +42,11 @@ public class CollectionHandler : MonoBehaviour
             ch.PickupCart();
             cartsText.text = "Carts: " + currentCartAmount + "/" + maxCartAmount;
         }
+    }
+
+    public void IncreaseEmpathie()
+    {
+        currentEmpathie++;
+        empathieText.text = "Empathie: " + currentEmpathie + "/" + maxEmpathie;
     }
 }

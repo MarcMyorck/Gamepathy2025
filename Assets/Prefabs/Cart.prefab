@@ -183,4 +183,4 @@ MonoBehaviour:
   maxFollowSpeed: 50
   damping: 5
   rotationSpeed: 10
-  maxDistance: 5
+  maxDistance: 3

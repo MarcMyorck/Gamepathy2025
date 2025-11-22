@@ -62,3 +62,9 @@ J – Bestätigen / Ja auswählen.
 
 N – Nein auswählen.
 
+
+
+Assets:
+
+Font: Pixelify\_Sans
+

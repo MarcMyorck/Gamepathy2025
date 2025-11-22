@@ -8,7 +8,7 @@ public class CartFollower : MonoBehaviour
     public float maxFollowSpeed = 50f;      // clamp the corrective velocity
     public float damping = 5f;              // damps relative velocity for stability
     public float rotationSpeed = 10f;       // how fast the cart rotates to face movement
-    public float maxDistance = 5f;
+    public float maxDistance = 3f;
 
     private Transform target;               // player transform
     private Vector2 targetLocalOffset ; // offset in local player space
