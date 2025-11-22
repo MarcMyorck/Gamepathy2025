@@ -224,8 +224,8 @@ MonoBehaviour:
   m_text: "Bewegung:\r\nW / A / S / D \u2013 Bewegen deiner Figur in alle Richtungen.\r\n\r\nSpringen:\r\nLeertaste
     \u2013 Einfache Sprung.\r\n2\xD7 Leertaste \u2013 Doppelsprung f\xFCr extra H\xF6he.\r\n\r\nDash:\r\nShift
     + Bewegungsrichtung \u2013 F\xFChre einen schnellen Dash in die aktuell gedr\xFCckte
-    Richtung aus.\r\n\r\nDialogsteuerung:\r\nJ \u2013 Best\xE4tigen / Ja ausw\xE4hlen.\r\nN
-    \u2013 Nein ausw\xE4hlen."
+    Richtung aus.\r\n\r\nDialogsteuerung:\r\nJ \u2013 Wagen stehenlassen.\r\nN \u2013
+    Wagen mitnehmen."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f6f63d082c94fdf4c99dbed2a9c8a65b, type: 2}
   m_sharedMaterial: {fileID: 3882205594202538047, guid: f6f63d082c94fdf4c99dbed2a9c8a65b, type: 2}

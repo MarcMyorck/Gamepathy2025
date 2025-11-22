@@ -32,7 +32,7 @@ Julia Jurkowski
 
 Andrew
 
-Yara
+YaraKoro
 
 
 
@@ -58,9 +58,9 @@ Shift + Bewegungsrichtung – Führe einen schnellen Dash in die aktuell gedrüc
 
 Dialogsteuerung:
 
-J – Bestätigen / Ja auswählen.
+J – Wagen stehenlassen.
 
-N – Nein auswählen.
+N – Wagen mitnehmen.
 
 
 

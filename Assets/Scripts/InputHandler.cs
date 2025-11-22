@@ -28,8 +28,8 @@ public class InputHandler : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
         dashAction = InputSystem.actions.FindAction("Sprint");
-        dialogueConfirmAction = InputSystem.actions.FindAction("ConfirmDialogue");
-        dialogueDenyAction = InputSystem.actions.FindAction("DenyDialogue");
+        dialogueDenyAction = InputSystem.actions.FindAction("ConfirmDialogue");
+        dialogueConfirmAction = InputSystem.actions.FindAction("DenyDialogue");
         pauseGameAction = InputSystem.actions.FindAction("PauseGame");
 
         inputMode = "gameplay";

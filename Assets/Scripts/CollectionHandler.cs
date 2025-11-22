@@ -15,7 +15,7 @@ public class CollectionHandler : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        maxEmpathie = GameObject.FindGameObjectsWithTag("DialogueTrigger").Length;
+        maxEmpathie = GameObject.FindGameObjectsWithTag("DialogueTrigger").Length - 1;
         currentEmpathie = 0;
         empathieText.text = "Empathie: " + currentEmpathie + "/" + maxEmpathie;
 
@@ -36,11 +36,8 @@ public class CollectionHandler : MonoBehaviour
         // Types of Collectibles
         if (collision.gameObject.CompareTag("CartCollectible"))
         {
-            collectAS.Play();
             Destroy(collision.gameObject);
-            currentCartAmount++;
-            ch.PickupCart();
-            cartsText.text = "Carts: " + currentCartAmount + "/" + maxCartAmount;
+            PickupCartInitiation();
         }
     }
 
@@ -48,5 +45,13 @@ public class CollectionHandler : MonoBehaviour
     {
         currentEmpathie++;
         empathieText.text = "Empathie: " + currentEmpathie + "/" + maxEmpathie;
+    }
+
+    public void PickupCartInitiation()
+    {
+        collectAS.Play();
+        currentCartAmount++;
+        ch.PickupCart();
+        cartsText.text = "Carts: " + currentCartAmount + "/" + maxCartAmount;
     }
 }
