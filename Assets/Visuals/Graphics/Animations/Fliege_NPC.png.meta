@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 4ab2d7b7175857c409054fdd37824fc6
+guid: 2ad2dc575b2920046851ac506e5abc92
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7404747906155613838
-    second: Tulips_0
+      213: -7670365609863078631
+    second: Fliege_NPC_0
   - first:
-      213: 4892108704614652770
-    second: Tulips_1
-  - first:
-      213: -2289082609303078625
-    second: Tulips_2
+      213: -4492180584796484670
+    second: Fliege_NPC_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 22
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -132,67 +129,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tulips_0
+      name: Fliege_NPC_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 21
-      alignment: 9
-      pivot: {x: 0.5070876, y: 0.98331404}
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 271f64ae20d0d3990800000000000000
-      internalID: -7404747906155613838
+      spriteID: 91d1dbefd136d8590800000000000000
+      internalID: -7670365609863078631
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tulips_1
+      name: Fliege_NPC_1
       rect:
         serializedVersion: 2
-        x: 15
+        x: 30
         y: 0
-        width: 17
-        height: 21
-      alignment: 9
-      pivot: {x: 0.4966645, y: 0.91041195}
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 26b172582f244e340800000000000000
-      internalID: 4892108704614652770
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tulips_2
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 0
-        width: 16
-        height: 21
-      alignment: 9
-      pivot: {x: 0.5389819, y: 0.8726108}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f1937f2be7b8b30e0800000000000000
-      internalID: -2289082609303078625
+      spriteID: 2cb8c480f8198a1c0800000000000000
+      internalID: -4492180584796484670
       vertices: []
       indices: 
       edges: []
@@ -201,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c6583c5c51791c84aa2d524e49366eef
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -211,9 +186,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tulips_0: -7404747906155613838
-      Tulips_1: 4892108704614652770
-      Tulips_2: -2289082609303078625
+      Fliege_NPC_0: -7670365609863078631
+      Fliege_NPC_1: -4492180584796484670
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
