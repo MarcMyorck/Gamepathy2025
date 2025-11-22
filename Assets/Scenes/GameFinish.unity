@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 595501220}
   - component: {fileID: 595501219}
   m_Layer: 5
-  m_Name: CartImage
+  m_Name: HeartImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -475,8 +475,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -175, y: 40}
-  m_SizeDelta: {x: 40.5, y: 28.5}
+  m_AnchoredPosition: {x: -175, y: 35}
+  m_SizeDelta: {x: 30, y: 26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &595501219
 MonoBehaviour:
@@ -498,7 +498,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4892108704614652770, guid: 4ab2d7b7175857c409054fdd37824fc6, type: 3}
+  m_Sprite: {fileID: -5654516946534706724, guid: e18e3612cfaa3ab41ad385a456c67414, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
