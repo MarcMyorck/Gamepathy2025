@@ -4665,7 +4665,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -26824,7 +26824,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1720005772}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -28947,6 +28947,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1265219217967868311, guid: 30dc5d917c4d46c489240b8e23c652c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604269613513214698, guid: 30dc5d917c4d46c489240b8e23c652c0, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9163935616156578680, guid: 30dc5d917c4d46c489240b8e23c652c0, type: 3}

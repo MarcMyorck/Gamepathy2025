@@ -1,27 +1,20 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameOverManager : MonoBehaviour
+public class TutorialManager : MonoBehaviour
 {
     public Button start;
-    public Button exit;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         start.onClick.AddListener(StartGame);
-        exit.onClick.AddListener(ExitGame);
-        SessionData.Reset();
     }
 
     void StartGame()
     {
-        SceneManager.LoadScene("Tutorial");
-    }
-
-    void ExitGame()
-    {
-        Application.Quit();
+        SceneManager.LoadScene("Level");
     }
 }

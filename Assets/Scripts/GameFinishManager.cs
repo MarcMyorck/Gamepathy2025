@@ -20,8 +20,7 @@ public class GameFinishManager : MonoBehaviour
 
     void StartGame()
     {
-        SceneManager.LoadScene("Level");
-        SessionData.Reset();
+        SceneManager.LoadScene("Tutorial");
     }
 
     void ExitGame()
