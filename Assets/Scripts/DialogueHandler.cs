@@ -13,6 +13,7 @@ public class DialogueHandler : MonoBehaviour
     public bool alreadyActivated = false;
     public Image background;
     public TextMeshProUGUI text;
+    public TextMeshProUGUI actions;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -35,36 +36,43 @@ public class DialogueHandler : MonoBehaviour
             case 0:
                 text.enabled = true;
                 text.text = "Bring' meine Wägen um jeden Preis zurück!";
+                actions.enabled = true;
                 background.enabled = true;
                 break;
             case 1:
                 text.enabled = true;
                 text.text = "Bitte lass mir meinen Wagen!";
+                actions.enabled = true;
                 background.enabled = true;
                 break;
             case 2:
                 text.enabled = true;
                 text.text = "Meine Familie braucht diesen Wagen!";
+                actions.enabled = true;
                 background.enabled = true;
                 break;
             case 3:
                 text.enabled = true;
                 text.text = "Ich habe nur diesen Wagen!";
+                actions.enabled = true;
                 background.enabled = true;
                 break;
             case 4:
                 text.enabled = true;
                 text.text = "Warum passiert mir immer sowas?";
+                actions.enabled = true;
                 background.enabled = true;
                 break;
             case 5:
                 text.enabled = true;
                 text.text = "Ich flehe dich an!";
+                actions.enabled = true;
                 background.enabled = true;
                 break;
             case 6:
                 text.enabled = true;
                 text.text = "Alles, nur nicht den Wagen!";
+                actions.enabled = true;
                 background.enabled = true;
                 break;
         }
@@ -93,6 +101,7 @@ public class DialogueHandler : MonoBehaviour
         ih.SwitchInputMode(this);
         text.enabled = false;
         text.text = "";
+        actions.enabled = false;
         background.enabled = false;
     }
 }
