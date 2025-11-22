@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c4b37400abd84a04b8034e3f90bb1f86
+guid: a78ea483775618041bcb2d783b3f2e06
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5950602344944010543
-    second: Rentner_NPC_0
+      213: 6161994595144338754
+    second: traash_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rentner_NPC_0
+      name: traash_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 31
-        height: 27
+        width: 16
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f258ef91e49c49250800000000000000
-      internalID: 5950602344944010543
+      spriteID: 24d8477cf6dc38550800000000000000
+      internalID: 6161994595144338754
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Rentner_NPC_0: 5950602344944010543
+      traash_0: 6161994595144338754
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
