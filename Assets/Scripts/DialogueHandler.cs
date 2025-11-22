@@ -32,6 +32,11 @@ public class DialogueHandler : MonoBehaviour
         ih.SwitchInputMode(this);
         switch (number)
         {
+            case 0:
+                text.enabled = true;
+                text.text = "Bring' meine Wägen um jeden Preis zurück!";
+                background.enabled = true;
+                break;
             case 1:
                 text.enabled = true;
                 text.text = "Bitte lass mir meinen Wagen!";
@@ -52,13 +57,19 @@ public class DialogueHandler : MonoBehaviour
 
     public void Confirm()
     {
-        cartH.PickupCart();
+        if (dialogueNumber != 0)
+        {
+            collectionH.PickupCartInitiation();
+        }
         EndDialogue();
     }
 
     public void Deny()
     {
-        collectionH.IncreaseEmpathie();
+        if (dialogueNumber != 0)
+        {
+            collectionH.IncreaseEmpathie();
+        }
         EndDialogue();
     }
 
